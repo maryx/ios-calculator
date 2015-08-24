@@ -39,6 +39,6 @@ class SettingsViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func onClickCancel(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion:nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }

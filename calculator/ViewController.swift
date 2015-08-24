@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tipLabel.text = "$0.00"
         tipControl.selectedSegmentIndex = defaults.integerForKey("defaultTipIndex")
+        defaults.didChangeValueForKey("defaultTipIndex")
         totalLabel.text = "$0.00"
         totalLabel.alpha = 0
         tipLabel.alpha = 0
@@ -31,7 +32,12 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        tipControl.selectedSegmentIndex = defaults.integerForKey("defaultTipIndex")
+    }
+
     @IBAction func onEditingChanged(sender: AnyObject) {
         totalLabel.frame = CGRect(x: 56, y: 352, width: 248, height: 45)
         totalLabel.alpha = 0
