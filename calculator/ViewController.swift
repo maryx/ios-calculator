@@ -16,11 +16,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var settingsButton: UIBarButtonItem!
 
+    var defaults = NSUserDefaults.standardUserDefaults()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tipLabel.text = "$0.00"
-        tipControl.selectedSegmentIndex = NSUserDefaults.standardUserDefaults().integerForKey("defaultTipIndex")
+        tipControl.selectedSegmentIndex = defaults.integerForKey("defaultTipIndex")
         totalLabel.text = "$0.00"
         totalLabel.alpha = 0
         tipLabel.alpha = 0
